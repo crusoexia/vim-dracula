@@ -1,4 +1,27 @@
 vim-dracula
 ===========
 
-Dracula color scheme for Vim, original repo is https://github.com/zenorocha/dracula-theme, refined highlight.
+Dracula color scheme for Vim, original repo is hold at [https://github.com/zenorocha/dracula-theme](https://github.com/zenorocha/dracula-theme), refined highlight, compatible with [Vundle](https://github.com/gmarik/Vundle.vim).
+
+Install
+-------
+
+[Vundle](https://github.com/gmarik/Vundle.vim)
+
+    Plugin 'crusoexia/vim-dracula'
+
+Usage
+-----
+
+Execute below command in your Vim or paste it into your _.vimrc_:
+
+    colorscheme dracula
+
+Screenshots
+-----------
+
+![init](./screenshots/init.png)
+
+![javascript](./screenshots/javascript.png)
+
+![html](./screenshots/html.png)
