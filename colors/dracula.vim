@@ -41,35 +41,35 @@ if has("gui_running")
   let s:purple     = "#bd93f9"
   let s:red        = "#ff5555"
 
-  let s:addfg      = "#d7ffaf"
-  let s:addbg      = "#5f875f"
-  let s:delbg      = "#f75f5f"
-  let s:changefg   = "#d7d7ff"
-  let s:changebg   = "#5f5f87"
+  let s:addfg      = "#f8f8f2"
+  let s:addbg      = "#468410"
+  let s:delfg      = "#8b080b"
+  let s:changefg   = "#f8f8f2"
+  let s:changebg   = "#243a5f"
 else
   let s:vmode      = "cterm"
-  let s:background = "234"
-  let s:foreground = "250"
-  let s:window     = "236"
-  let s:line       = "235"
+  let s:background = "235"
+  let s:foreground = "231"
+  let s:window     = "238"
+  let s:line       = "236"
   let s:darkcolumn = "234"
-  let s:selection  = "238"
-  let s:comment    = "243"
+  let s:selection  = "236"
+  let s:comment    = "61"
   let s:error      = "52"
   
-  let s:pink       = "197"
-  let s:green      = "148"
-  let s:aqua       = "81"
-  let s:yellow     = "186"
-  let s:orange     = "208"
+  let s:pink       = "212"
+  let s:green      = "84"
+  let s:aqua       = "117"
+  let s:yellow     = "228"
+  let s:orange     = "215"
   let s:purple     = "141"
-  let s:red        = "196"
+  let s:red        = "231"
 
-  let s:addfg      = "193"
-  let s:addbg      = "65"
-  let s:delbg      = "167"
-  let s:changefg   = "189"
-  let s:changebg   = "60"
+  let s:addfg      = "231"
+  let s:addbg      = "64"
+  let s:delfg      = "88"
+  let s:changefg   = "231"
+  let s:changebg   = "23"
 endif
 
 " Formatting Options
@@ -105,7 +105,6 @@ exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
 exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
 exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
 exe "let s:bg_addfg      = ' ".s:vmode."bg=".s:addfg     ."'"
-exe "let s:bg_delbg      = ' ".s:vmode."bg=".s:delbg     ."'"
 exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
 exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
 exe "let s:bg_error      = ' ".s:vmode."bg=".s:error     ."'"
@@ -127,7 +126,7 @@ exe "let s:fg_window     = ' ".s:vmode."fg=".s:window    ."'"
 exe "let s:fg_darkcolumn = ' ".s:vmode."fg=".s:darkcolumn."'"
 exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
 exe "let s:fg_addfg      = ' ".s:vmode."fg=".s:addfg     ."'"
-exe "let s:fg_delbg      = ' ".s:vmode."fg=".s:delbg     ."'"
+exe "let s:fg_delfg      = ' ".s:vmode."fg=".s:delfg     ."'"
 exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
 exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
 exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
@@ -182,7 +181,7 @@ exe "hi! Directory"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " diff
 exe "hi! DiffAdd"         .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffDelete"      .s:fg_background  .s:bg_delbg       .s:fmt_none
+exe "hi! DiffDelete"      .s:fg_delfg       .s:bg_none        .s:fmt_none
 exe "hi! DiffChange"      .s:fg_changefg    .s:bg_changebg    .s:fmt_none
 exe "hi! DiffText"        .s:fg_background  .s:bg_aqua        .s:fmt_none
 
