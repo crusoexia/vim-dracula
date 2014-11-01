@@ -28,7 +28,7 @@ if has("gui_running")
   let s:foreground = "#f2f2ec"
   let s:window     = "#64666D"
   let s:line       = "#44475a"
-  let s:darkcolumn = "#4c4c4c"
+  let s:darkcolumn = "#2d2f3b"
   let s:selection  = "#44475a"
   let s:comment    = "#6272a4"
   let s:error      = "#5f0000"
