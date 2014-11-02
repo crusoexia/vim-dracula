@@ -26,7 +26,7 @@ if has("gui_running")
   let s:vmode      = "gui"
   let s:background = "#282a36"
   let s:foreground = "#f2f2ec"
-  let s:window     = "#64666D"
+  let s:window     = "#54565D"
   let s:line       = "#44475a"
   let s:darkcolumn = "#2d2f3b"
   let s:selection  = "#44475a"
