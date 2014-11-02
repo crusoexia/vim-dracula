@@ -207,7 +207,7 @@ exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
@@ -222,13 +222,13 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Keyword"
 "        Exception"
 
-exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        Include"
 "        Define"
 "        Macro"
 "        PreCondit"
 
-exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        SpecialKey
 "        SpecialChar"
 "        Tag"
@@ -251,12 +251,12 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 " Vim command
 exe "hi! vimCommand"                    .s:fg_pink         .s:bg_none          .s:fmt_none
 
-" Javascript
-exe "hi! javaScriptFunction"            .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptFuncName"            .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! javaScriptRailsFunction"       .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptBraces"              .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptArgument"            .s:fg_orange       .s:bg_none          .s:fmt_none
+" Javascript (compliant with https://github.com/pangloss/vim-javascript)
+exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! jsFuncCall"                    .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                        .s:fg_none         .s:bg_none          .s:fmt_none
 
 " Html
 exe "hi! htmlTag"                       .s:fg_foreground   .s:bg_none          .s:fmt_none
