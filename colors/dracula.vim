@@ -146,14 +146,8 @@ exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'
 " Highlighting 
 " ----------------
 
-" Use Xresources for background colour
-if has('gui_running')
-  exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
-else
-  exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
-endif
-
 " editor
+exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
