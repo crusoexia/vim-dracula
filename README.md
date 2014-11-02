@@ -20,8 +20,4 @@ Execute below command in your Vim or paste it into your _.vimrc_:
 Screenshots
 -----------
 
-![init](./screenshots/init.png)
-
 ![javascript](./screenshots/javascript.png)
-
-![html](./screenshots/html.png)
