@@ -29,7 +29,7 @@ if has("gui_running")
   let s:window     = "#44464D"
   let s:line       = "#44475a"
   let s:darkcolumn = "#2d2f3b"
-  let s:selection  = "#44475a"
+  let s:selection  = "#54576a"
   let s:comment    = "#6272a4"
   let s:error      = "#5f0000"
   
@@ -51,9 +51,9 @@ else
   let s:background = "236"
   let s:foreground = "231"
   let s:window     = "238"
-  let s:line       = "236"
+  let s:line       = "238"
   let s:darkcolumn = "234"
-  let s:selection  = "236"
+  let s:selection  = "239"
   let s:comment    = "61"
   let s:error      = "52"
   
@@ -147,7 +147,7 @@ exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'
 " ----------------
 
 " editor
-exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
+exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
@@ -155,7 +155,7 @@ exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! VertSplit"       .s:fg_window      .s:bg_window      .s:fmt_none
 exe "hi! NonText"         .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! LineNr"          .s:fg_window      .s:bg_none        .s:fmt_none
+exe "hi! LineNr"          .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! StatusLine"      .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
