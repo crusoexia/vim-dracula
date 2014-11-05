@@ -2,12 +2,22 @@
 " Maintainer: Crusoe Xia (crusoexia)
 " URL:        https://github.com/crusoexia/vim-dracula
 " License:    MIT
+"
+" Configuration:
+"
+"   * Enable highlight function call:
+"
+"       let g:dracula_func_call = 1
 
 " Initialisation
 " --------------
 
-if !has("gui_running") && &t_Co < 256
+if ! has("gui_running") && &t_Co < 256
   finish
+endif
+
+if ! exists("g:dracula_func_call")
+    let g:dracula_func_call = 0
 endif
 
 set background=dark
@@ -249,8 +259,12 @@ exe "hi! vimCommand"                    .s:fg_pink         .s:bg_none          .
 exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! jsFuncCall"                    .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsThis"                        .s:fg_none         .s:bg_none          .s:fmt_none
+if exists("g:dracula_func_call") && g:dracula_func_call
+    exe "hi! jsFuncCall"                .s:fg_green        .s:bg_none          .s:fmt_none
+else
+    exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
+endif
 
 " Html
 exe "hi! htmlTag"                       .s:fg_foreground   .s:bg_none          .s:fmt_none
