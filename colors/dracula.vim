@@ -48,12 +48,12 @@ if has("gui_running")
   let s:changebg   = "#243a5f"
 else
   let s:vmode      = "cterm"
-  let s:background = "236"
+  let s:background = "235"
   let s:foreground = "231"
-  let s:window     = "238"
-  let s:line       = "238"
+  let s:window     = "237"
+  let s:line       = "237"
   let s:darkcolumn = "234"
-  let s:selection  = "239"
+  let s:selection  = "238"
   let s:comment    = "61"
   let s:error      = "52"
   
