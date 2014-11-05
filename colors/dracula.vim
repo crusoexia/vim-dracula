@@ -48,7 +48,7 @@ if has("gui_running")
   let s:changebg   = "#243a5f"
 else
   let s:vmode      = "cterm"
-  let s:background = "235"
+  let s:background = "236"
   let s:foreground = "231"
   let s:window     = "238"
   let s:line       = "236"
