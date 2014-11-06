@@ -259,7 +259,7 @@ exe "hi! vimCommand"                    .s:fg_pink         .s:bg_none          .
 exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                        .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                        .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsRegexpString"                .s:fg_purple       .s:bg_none          .s:fmt_none
 if exists("g:dracula_func_call") && g:dracula_func_call
     exe "hi! jsFuncCall"                .s:fg_green        .s:bg_none          .s:fmt_none
