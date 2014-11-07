@@ -8,7 +8,12 @@
 "   * Enable highlight function call:
 "
 "       let g:dracula_func_call = 1
-
+"
+"   * Enable italic
+"
+"       let g:dracula_ital = 1
+"
+"
 " Initialisation
 " --------------
 
@@ -37,7 +42,7 @@ if has("gui_running")
   let s:background = "#282A36"
   let s:foreground = "#F2F2EC"
   let s:window     = "#424360"
-  let s:line       = "#44475A"
+  let s:line       = "#36394C"
   let s:darkcolumn = "#2D2F3B"
   let s:selection  = "#54576A"
   let s:comment    = "#6272A4"
@@ -61,7 +66,7 @@ else
   let s:background = "235"
   let s:foreground = "231"
   let s:window     = "60"
-  let s:line       = "237"
+  let s:line       = "236"
   let s:darkcolumn = "234"
   let s:selection  = "238"
   let s:comment    = "61"
