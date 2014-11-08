@@ -213,7 +213,7 @@ exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
-if g:dracula_italic
+if g:dracula_italic == 1
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
 else
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
@@ -265,7 +265,7 @@ exe "hi! jsThis"                        .s:fg_aqua         .s:bg_none          .
 exe "hi! jsRegexpString"                .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! jsFuncCall"                    .s:fg_none         .s:bg_none          .s:fmt_none
 
-if g:dracula_italic
+if g:dracula_italic == 1
     exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_ital
 else
     exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_none
@@ -286,7 +286,7 @@ hi! link xmlTagName htmlTagName
 hi! link xmlAttrib  htmlArg
 
 " CSS
-if exists("g:dracula_italic") && g:dracula_italic
+if g:dracula_italic == 1
     exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_undi
 else
     exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_undr
@@ -300,14 +300,13 @@ exe "hi! cssCommonAttr"                 .s:fg_pink         .s:bg_none          .
 exe "hi! cssBraces"                     .s:fg_foreground   .s:bg_none          .s:fmt_none
 
 " ruby
-exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyClass"                     .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! rubyInterpolationDelimiter"    .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
-exe "hi! rubyBlockParameter"            .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyInclude"                   .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexp"                    .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexpDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
@@ -315,12 +314,18 @@ exe "hi! rubyEscape"                    .s:fg_purple       .s:bg_none          .
 exe "hi! rubyControl"                   .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyClassVariable"             .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyException"                 .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyException"                 .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! rubyPseudoVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsARAssociationMethod"  .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsARMethod"             .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsRenderMethod"         .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsMethod"               .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsARAssociationMethod"  .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsARMethod"             .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsRenderMethod"         .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsMethod"               .s:fg_pink         .s:bg_none          .s:fmt_none
+
+if g:dracula_italic == 1
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
+else
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
+endif
 
 " eruby
 exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
