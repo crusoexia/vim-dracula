@@ -5,15 +5,10 @@
 "
 " Configuration:
 "
-"   * Enable highlight function call:
-"
-"       let g:dracula_func_call = 1
-"
 "   * Enable italic
 "
-"       let g:dracula_ital = 1
-"
-"
+"       let g:dracula_italic = 1
+
 " Initialisation
 " --------------
 
@@ -21,8 +16,8 @@ if ! has("gui_running") && &t_Co < 256
   finish
 endif
 
-if ! exists("g:dracula_func_call")
-    let g:dracula_func_call = 0
+if ! exists("g:dracula_italic")
+    let g:dracula_italic = 0
 endif
 
 set background=dark
@@ -151,7 +146,7 @@ exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'
 exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
 exe "let s:fmt_undr      = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u    ."'"
 exe "let s:fmt_undb      = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
-exe "let s:fmt_undi      = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u    ."'"
+exe "let s:fmt_undi      = ' ".s:vmode."=NONE".s:u.s:i.  " term=NONE".s:u.s:i."'"
 exe "let s:fmt_curl      = ' ".s:vmode."=NONE".s:c.      " term=NONE".s:c    ."'"
 exe "let s:fmt_ital      = ' ".s:vmode."=NONE".s:i.      " term=NONE".s:i    ."'"
 exe "let s:fmt_stnd      = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s    ."'"
@@ -218,8 +213,12 @@ exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
-exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+if g:dracula_italic
+    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
+else
+    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
+endif
+"        Structure"
 "        StorageClass"
 "        Typedef"
 
@@ -261,16 +260,17 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! vimCommand"                    .s:fg_pink         .s:bg_none          .s:fmt_none
 
 " Javascript (compliant with https://github.com/pangloss/vim-javascript)
-exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! jsThis"                        .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsRegexpString"                .s:fg_purple       .s:bg_none          .s:fmt_none
-if exists("g:dracula_func_call") && g:dracula_func_call
-    exe "hi! jsFuncCall"                .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncCall"                    .s:fg_none         .s:bg_none          .s:fmt_none
+
+if g:dracula_italic
+    exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_ital
 else
-    exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
+    exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_none
 endif
+
 
 " Html
 exe "hi! htmlTag"                       .s:fg_foreground   .s:bg_none          .s:fmt_none
@@ -286,14 +286,18 @@ hi! link xmlTagName htmlTagName
 hi! link xmlAttrib  htmlArg
 
 " CSS
-exe "hi! cssURL"                        .s:fg_orange       .s:bg_none          .s:fmt_ital
+if exists("g:dracula_italic") && g:dracula_italic
+    exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_undi
+else
+    exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_undr
+endif
 exe "hi! cssFunctionName"               .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! cssColor"                      .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! cssPseudoClassId"              .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! cssClassName"                  .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! cssValueLength"                .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! cssCommonAttr"                 .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! cssBraces"                     .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! cssBraces"                     .s:fg_foreground   .s:bg_none          .s:fmt_none
 
 " ruby
 exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
