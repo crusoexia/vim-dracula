@@ -19,8 +19,8 @@ Execute below command in your Vim or paste it into your _.vimrc_:
 
     colorscheme dracula
 
-Javascript enchance
--------------------
+Javascript enchancement
+-----------------------
 
 For javascript development, it is recommend to install [vim-javascript](https://github.com/pangloss/vim-javascript), which provide features such as param syntax highlight.
 
