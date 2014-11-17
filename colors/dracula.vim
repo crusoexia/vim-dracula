@@ -320,7 +320,7 @@ exe "hi! rubyRailsARMethod"             .s:fg_orange       .s:bg_none          .
 exe "hi! rubyRailsRenderMethod"         .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsMethod"               .s:fg_orange       .s:bg_none          .s:fmt_none
 
-if g:monokai_italic == 1
+if g:dracula_italic == 1
     exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
     exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_ital
     exe "hi! rubyIdentifier"            .s:fg_orange       .s:bg_none          .s:fmt_ital
