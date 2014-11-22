@@ -143,7 +143,7 @@ exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
+exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.s:i.  " term=NONE".s:b.s:i."'"
 exe "let s:fmt_undr      = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u    ."'"
 exe "let s:fmt_undb      = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
 exe "let s:fmt_undi      = ' ".s:vmode."=NONE".s:u.s:i.  " term=NONE".s:u.s:i."'"
@@ -203,13 +203,19 @@ exe "hi! PmenuSel"        .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 " Generic Syntax Highlighting
 " ---------------------------
 
-exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
+if g:dracula_italic == 1
+    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_ital
+else
+    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_none
+endif
+
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
+exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
@@ -221,7 +227,7 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Keyword"
 "        Exception"
 
-exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "        Include"
 "        Define"
 "        Macro"
@@ -240,17 +246,18 @@ exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
 
 if g:dracula_italic == 1
-    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
-    exe "hi! Todo"        .s:fg_orange      .s:bg_none        .s:fmt_ital
+    exe "hi! Todo"        .s:fg_orange      .s:bg_none        .s:fmt_bldi
     exe "hi! Comment"     .s:fg_comment     .s:bg_none        .s:fmt_ital
 else
-    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
-    exe "hi! Todo"        .s:fg_orange      .s:bg_none        .s:fmt_none
+    exe "hi! Todo"        .s:fg_orange      .s:bg_none        .s:fmt_bold
     exe "hi! Comment"     .s:fg_comment     .s:bg_none        .s:fmt_none
 endif
 
-" Quickfix window highlighting
-exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+" Syntastic
+" ---------
+
+hi! link SyntasticErrorSign Error
+exe "hi! SyntasticWarningSign"          .s:fg_orange       .s:bg_darkcolumn    .s:fmt_none
 
 " Language highlight
 " ------------------
@@ -269,7 +276,6 @@ if g:dracula_italic == 1
 else
     exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_none
 endif
-
 
 " Html
 exe "hi! htmlTag"                       .s:fg_foreground   .s:bg_none          .s:fmt_none
