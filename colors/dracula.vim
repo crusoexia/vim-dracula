@@ -37,6 +37,7 @@ if has("gui_running")
   let s:background = "#282A36"
   let s:foreground = "#F2F2EC"
   let s:window     = "#424360"
+  let s:linenr     = "#898A8D"
   let s:line       = "#36394C"
   let s:darkcolumn = "#2D2F3B"
   let s:selection  = "#54576A"
@@ -61,6 +62,7 @@ else
   let s:background = "235"
   let s:foreground = "231"
   let s:window     = "60"
+  let s:linenr     = "240"
   let s:line       = "236"
   let s:darkcolumn = "234"
   let s:selection  = "238"
@@ -103,6 +105,7 @@ exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
 exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
 exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
+exe "let s:bg_linenr     = ' ".s:vmode."bg=".s:linenr    ."'"
 exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
@@ -124,6 +127,7 @@ exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
 exe "let s:fg_background = ' ".s:vmode."fg=".s:background."'"
 exe "let s:fg_selection  = ' ".s:vmode."fg=".s:selection ."'"
 exe "let s:fg_line       = ' ".s:vmode."fg=".s:line      ."'"
+exe "let s:fg_linenr     = ' ".s:vmode."fg=".s:linenr    ."'"
 exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
@@ -161,11 +165,11 @@ exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
+exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_bold
 exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
 exe "hi! NonText"         .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! LineNr"          .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! LineNr"          .s:fg_linenr      .s:bg_none        .s:fmt_none
 exe "hi! StatusLine"      .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
