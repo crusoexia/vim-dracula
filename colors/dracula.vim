@@ -257,6 +257,20 @@ else
     exe "hi! Comment"     .s:fg_comment     .s:bg_none        .s:fmt_none
 endif
 
+" NerdTree
+" --------
+
+exe "hi! NERDTreeOpenable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeHelp"              .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarksHeader"   .s:fg_purple      .s:bg_none        .s:fmt_bold
+exe "hi! NERDTreeBookmarksLeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarkName"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeCWD"               .s:fg_purple      .s:bg_none        .s:fmt_bold
+exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDirSlash"          .s:fg_aqua        .s:bg_none        .s:fmt_none
+
 " Syntastic
 " ---------
 
