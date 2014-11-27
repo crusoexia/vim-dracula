@@ -34,14 +34,14 @@ let colors_name = "dracula"
 
 if has("gui_running")
   let s:vmode      = "gui"
-  let s:background = "#282A36"
+  let s:background = "#323342"
   let s:foreground = "#F2F2EC"
-  let s:window     = "#60608B"
+  let s:window     = "#7272A5"
   let s:linenr     = "#898A8D"
-  let s:line       = "#36394C"
+  let s:line       = "#3C3E54"
   let s:darkcolumn = "#2D2F3B"
   let s:selection  = "#54576A"
-  let s:comment    = "#6272A4"
+  let s:comment    = "#7283BF"
   let s:error      = "#5F0000"
   
   let s:pink       = "#FF79C6"
